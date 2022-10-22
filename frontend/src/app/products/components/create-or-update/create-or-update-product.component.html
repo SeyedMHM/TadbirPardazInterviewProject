@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <span class="font-size-16">
+                <i class="fa-solid fa-circle-info margin-left-5"></i>
+                <span *ngIf="!model.id">صفحه درج محصول</span>
+                <span *ngIf="model.id">صفحه ویرایش محصول</span>
+            </span>
+        </div>
+
+        <div class="col-6 text-left">
+            <a href="#" mat-button color="primary" class="font-size-16" routerLink="/products/index">بازگشت به صفحه
+                محصولات <i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+    </div>
+
+    <form #createOrUpdateForm="ngForm" (ngSubmit)="save()">
+        <mat-form-field>
+            <mat-label for="title">عنوان</mat-label>
+            <input matInput type="text" placeholder="عنوان را وارد نمایید" [(ngModel)]="model.title" id="title"
+                name="title" #titleInput="ngModel">
+        </mat-form-field>
+
+        <mat-form-field class="margin-right-15">
+            <mat-label for="price">مبلغ</mat-label>
+            <input matInput type="number" placeholder="مبلغ را وارد نمایید" min="0" max="100000000" id="price"
+                name="price" [(ngModel)]="model.price" #priceInput="ngModel">
+            <span matSuffix>ریال</span>
+        </mat-form-field>
+
+        <button mat-flat-button color="primary" class="margin-right-15" type="submit"
+            [disabled]="!createOrUpdateForm.form.valid">ذخیره</button>
+    </form>
+</div>

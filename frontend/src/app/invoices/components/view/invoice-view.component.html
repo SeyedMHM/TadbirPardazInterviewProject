@@ -1,0 +1,134 @@
+<div class="container">
+    <div class="row margin-bottom-15">
+        <div class="col-6">
+            <span style="font-size:18px">
+                <i class="fa-solid fa-circle-info"></i>
+                صفحه مشخصات فاکتور
+            </span>
+        </div>
+        <div class="col-6 text-left">
+            <a href="#" mat-button color="primary" class="font-size-18" routerLink="/invoices/index">بازگشت به صفحه
+                فاکتورها <i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+    </div>
+
+    <ng-container *ngIf="invoiceGetResponse">
+        <div class="row">
+            <div class="col-8">
+                <div class="padding-top-5 padding-bottom-5">
+                    <span class="text-bold">نام خریدار: </span>
+                    <span>{{invoiceGetResponse.customerName}}</span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="padding-top-5 padding-bottom-5">
+                    <span class="text-bold">تاریخ: </span>
+                    <span>{{invoiceGetResponse.issuedDatePersian}}</span>
+                </div>
+                <div class="padding-top-5 padding-bottom-5">
+                    <span class="text-bold">شماره: </span>
+                    <span>{{invoiceGetResponse.id}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover" style="width:1050px">
+                <thead>
+                    <tr>
+                        <td class="text-center vertical-align text-bold" width="50px">
+                            ردیف
+                        </td>
+                        <td class="text-center vertical-align text-bold" width="200px">
+                            عنوان
+                        </td>
+                        <td class="text-center vertical-align text-bold" width="50px">
+                            تعداد
+                        </td>
+                        <td class="text-center vertical-align text-bold" width="100px">
+                            قیمت واحد<br>(بدون تخفیف)
+                        </td>
+                        <td class="text-center vertical-align text-bold" width="50px">
+                            درصد<br>تخفیف
+                        </td>
+                        <td class="text-center vertical-align text-bold" width="100px">
+                            قیمت واحد<br>(با تخفیف)
+                        </td>
+                        <td class="text-center vertical-align text-bold" width="100px">
+                            سرجمع<br>(بدون تخفیف)
+                        </td>
+                        <td class="text-center vertical-align text-bold" width="100px">
+                            سرجمع<br>(با تخفیف)
+                        </td>
+                        <td class="text-center vertical-align text-bold" width="150px">
+                            سود مشتری از<br>تخفیف واحد
+                        </td>
+                        <td class="text-center vertical-align text-bold" width="150px">
+                            سود مشتری از<br>تخفیف کل
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let invoiceDetail of invoiceGetResponse.invoiceDetails; let i = index">
+                        <td class="text-center vertical-align">{{i+1}}</td>
+                        <td class="text-center vertical-align">{{invoiceDetail.productTitle}}</td>
+                        <td class="text-center vertical-align">{{invoiceDetail.quantity}}</td>
+                        <td class="text-center vertical-align">{{invoiceDetail.productPrice| number}}</td>
+                        <td class="text-center vertical-align">{{invoiceDetail.discountPercent}}</td>
+                        <td class="text-center vertical-align">{{invoiceDetail.productPriceWithDiscount | number}}</td>
+                        <td class="text-center vertical-align">{{invoiceDetail.sumOfProductPrice | number}}</td>
+                        <td class="text-center vertical-align">{{invoiceDetail.sumOfProductPriceWithoutDiscount |
+                            number}}
+                        </td>
+                        <td class="text-center vertical-align">{{invoiceDetail.customerProfitPerProduct | number}}</td>
+                        <td class="text-center vertical-align">{{invoiceDetail.sumOfCustomerProfit | number}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="8">
+                            <span class="text-bold">توضیحات: </span>
+                            <span>{{invoiceGetResponse.description}}</span>
+                        </td>
+                        <td colspan="2" style="padding: 0px;">
+                            <div
+                                style="width: 100%; overflow: hidden; border-bottom: 1px solid rgb(222, 226, 230);height: 30px;">
+                                <div class="text-center vertical-align"
+                                    style="width: 50%; float: right; border-left: 1px solid rgb(222, 226, 230); padding: 5px;">
+                                    <span class="text-bold">جمع کل</span>
+                                </div>
+                                <div class="text-center vertical-align" style="width: 50%; float: right; padding: 5px;">
+                                    <span>{{invoiceGetResponse.sumOfPrice}}</span>
+                                </div>
+                            </div>
+
+                            <div
+                                style="width: 100%; overflow: hidden; border-bottom: 1px solid rgb(222, 226, 230);height: 30px;">
+                                <div class="text-center vertical-align"
+                                    style="width: 50%; float: right; border-left: 1px solid rgb(222, 226, 230); padding: 5px;height: 30px;">
+                                    <span class="text-bold">جمع تخفیف</span>
+                                </div>
+                                <div class="text-center vertical-align"
+                                    style="width: 50%; float: right; padding: 5px; height: 30px;">
+                                    <span>{{invoiceGetResponse.sumOfDiscount}}</span>
+                                </div>
+                            </div>
+
+                            <div style="width: 100%; overflow: hidden;height: 30px;">
+                                <div class="text-center vertical-align"
+                                    style="width: 50%; float: right; border-left: 1px solid rgb(222, 226, 230); padding: 5px;height: 30px;">
+                                    <span class="text-bold">قابل پرداخت</span>
+                                </div>
+                                <div class="text-center vertical-align"
+                                    style="width: 50%; float: right; padding: 5px;height: 30px;">
+                                    <span>{{invoiceGetResponse.finalAmount}}</span>
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </ng-container>
+
+
+</div>

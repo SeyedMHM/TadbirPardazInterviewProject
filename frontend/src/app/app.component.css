@@ -1,0 +1,30 @@
+.sidebar-container {
+    background-color: rgb(63, 81, 181);
+    padding: 0px;
+    height: inherit;
+}
+
+.sidebar-container ul {
+    width: 100%;
+    padding: 0px 0px 10px 0px;
+    margin: 0px;
+
+}
+
+.sidebar-container li {
+    list-style: none;
+    display: inline-block;
+    width: 100%;
+}
+
+.sidebar-container a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    display: inline-block;
+    width: 100%;
+}
+
+.sidebar-container a:hover {
+    background-color: rgb(50, 65, 150);
+}

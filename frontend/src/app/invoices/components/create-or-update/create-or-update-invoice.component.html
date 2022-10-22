@@ -1,0 +1,142 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <span class="font-size-16">
+                <i class="fa-solid fa-circle-info margin-left-5"></i>
+                <span *ngIf="!model.id">صفحه درج فاکتور</span>
+                <span *ngIf="model.id">صفحه ویرایش فاکتور</span>
+            </span>
+        </div>
+
+        <div class="col-6 text-left">
+            <a href="#" mat-button color="primary" class="font-size-16" routerLink="/invoices/index">بازگشت به صفحه
+                فاکتورها <i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+    </div>
+    <form #createOrUpdateForm="ngForm" (ngSubmit)="save()">
+        <div class="row">
+            <div class="col-3">
+                <mat-form-field style="width:100%">
+                    <mat-label for="customerName">خریدار</mat-label>
+                    <input matInput type="text" placeholder="خریدار را وارد نمایید" [(ngModel)]="model.customerName"
+                        id="customerName" name="customerName" #customerNameInput="ngModel">
+                </mat-form-field>
+            </div>
+            <div class="col-3">
+                <mat-form-field style="width:100%">
+                    <mat-label for="issuedDatePersian">تاریخ</mat-label>
+                    <input matInput type="text" pattern="[0-9]{4}/[0-9]{2}/[0-9]{2}" placeholder="تاریخ را وارد نمایید"
+                        [(ngModel)]="model.issuedDatePersian" id="issuedDatePersian" name="issuedDatePersian"
+                        #issuedDatePersianInput="ngModel">
+                    <mat-hint>
+                        به علت کمبود وقت، امکان نصب کامپوننت تاریخ وجود نداشت
+                        <br>
+                        فرمت صحبح تاریخ: 1401/01/05
+                    </mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-12">
+                <mat-form-field style="width:100%">
+                    <mat-label for="description">توضیحات</mat-label>
+                    <textarea matInput placeholder="توضیحات را وارد نمایید" id="description" rows="2" cols="50"
+                        maxlength="500" name="description" [(ngModel)]="model.description"
+                        #descriptionInput="ngModel"></textarea>
+                </mat-form-field>
+            </div>
+
+        </div>
+
+        <div class="row" *ngFor="let invoiceDetails of model.invoiceDetails; let i = index">
+            <div class="col-6">
+                <mat-form-field style="width:100%">
+                    <mat-label>محصولات</mat-label>
+                    <mat-select [(value)]="model.invoiceDetails[i].productId"
+                        (valueChange)="calculateRow(model.invoiceDetails[i])">
+                        <mat-option *ngFor="let product of products" [value]="product.id">
+                            {{product.id}} - {{product.title}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="col-2">
+                <mat-form-field style="width:100%">
+                    <mat-label for="quantity">تعداد</mat-label>
+                    <input matInput type="number" placeholder="تعداد را وارد نمایید"
+                        [(ngModel)]="model.invoiceDetails[i].quantity" id="quantity" name="quantity"
+                        (ngModelChange)="calculateRow(invoiceDetails)" #quantityInput="ngModel">
+                </mat-form-field>
+            </div>
+
+            <div class="col-2">
+                <mat-form-field style="width:100%">
+                    <mat-label for="discountPercent">درصد تخفیف</mat-label>
+                    <input matInput type="number" placeholder="درصد تخفیف را وارد نمایید" min="0" max="100"
+                        [(ngModel)]="model.invoiceDetails[i].discountPercent" id="discountPercent"
+                        name="discountPercent" #discountPercentInput="ngModel"
+                        (ngModelChange)="calculateRow(invoiceDetails)">
+                </mat-form-field>
+            </div>
+            <div class="col-2">
+                <button mat-flat-button color="warn" type="button" style="width:auto"
+                    (click)="removeProduct(model.invoiceDetails[i])">
+                    حذف ردیف
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </div>
+
+            <div class="col-12" style="margin-bottom:20px; border-bottom:1px dashed rgb(63, 81, 181);"
+                *ngIf="model.invoiceDetails[i].productId">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>قیمت واحد (بدون تخفیف)</th>
+                            <th>قیمت واحد (با تخفیف)</th>
+                            <th>سر جمع (بدون تخفیف</th>
+                            <th>سر جمع (با تخفیف</th>
+                            <th>سود مشتری از تخفیف واحد</th>
+                            <th>سود مشتری از تخفیف کل</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{model.invoiceDetails[i].productPrice}}</td>
+                            <td>{{model.invoiceDetails[i].productPriceWithDiscount}}</td>
+                            <td>{{model.invoiceDetails[i].sumOfProductPrice}}</td>
+                            <td>{{model.invoiceDetails[i].sumOfProductPriceWithoutDiscount}}</td>
+                            <td>{{model.invoiceDetails[i].customerProfitPerProduct}}</td>
+                            <td>{{model.invoiceDetails[i].sumOfCustomerProfit}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row" style="border:2px solid rgb(63, 81, 181);">
+            <div class="col-4 invoices-footer-item" style="border-left:1px solid rgb(63, 81, 181);">
+                <span>جمع کل: </span>
+                <span>{{model.sumOfPrice}}</span>
+            </div>
+
+            <div class="col-4 invoices-footer-item" style="border-left:1px solid rgb(63, 81, 181);">
+                <span>جمع تخفیف: </span>
+                <span>{{model.sumOfDiscount}}</span>
+            </div>
+
+            <div class="col-4 invoices-footer-item">
+                <span>قابل پرداخت: </span>
+                <span>{{model.finalAmount}}</span>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 15px;margin-bottom: 30px;">
+            <button mat-flat-button color="primary" type="button" style="width:auto" (click)="addProduct()">ثبت
+                محصول جدید <i class="fa-solid fa-plus" style="color:rgb(63, 81, 181);"></i>
+            </button>
+        </div>
+
+        <div class="row">
+            <button mat-flat-button color="primary" type="submit" style="width:auto"
+                [disabled]="!createOrUpdateForm.form.valid">ذخیره</button>
+        </div>
+    </form>
+</div>

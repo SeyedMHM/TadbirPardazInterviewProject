@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <span style="font-size:18px">
+                <i class="fa-solid fa-circle-info"></i>
+                صفحه نمایش محصولات
+            </span>
+        </div>
+        <div class="col-6 text-left">
+            <a href="#" mat-button color="primary" class="font-size-18" routerLink="/products/index">بازگشت به صفحه
+                محصولات <i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+    </div>
+
+    <ng-container>
+        <h1>{{ productGetResponse.title }}</h1>
+
+        <div>
+            <strong>شناسه:</strong>
+            <p>{{ productGetResponse.id }}</p>
+        </div>
+
+        <div>
+            <strong>قیمت:</strong>
+            <p>{{ productGetResponse.price }}</p>
+        </div>
+    </ng-container>
+</div>

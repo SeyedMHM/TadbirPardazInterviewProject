@@ -1,0 +1,66 @@
+<div class="container">
+    <a href="#" routerLink="/products/create-or-update/" mat-flat-button color="primary">
+        درج محصول جدید
+        <i class="fa-solid fa-plus"></i>
+    </a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>شناسه</th>
+                <th>عنوان</th>
+                <th>قیمت</th>
+                <th width="100px">عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{ product.id }}</td>
+                <td>{{ product.title }}</td>
+                <td>{{ product.price }}</td>
+                <td>
+                    <a class="padding-left-5 padding-right-5" style="cursor: pointer;"
+                        routerLink="/products/view/{{product.id}}" title="نمایش">
+                        <i class="fa-solid fa-eye"></i>
+                    </a>
+
+                    <a class="padding-left-5 padding-right-5" style="cursor: pointer;" color="primary"
+                        routerLink="/products/create-or-update/{{product.id}}" title="ویرایش">
+                        <i class="fa-solid fa-pen"></i>
+                    </a>
+
+                    <a color="warn" style="color:rgb(244,67,54); cursor: pointer;"
+                        class="padding-left-5 padding-right-5" (click)="deleteProduct(product)" title="حذف">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <div class="row" *ngIf="paginationData">
+        <div class="col-8">
+            <button mat-button color="primary" class="margin-left-5" (click)="getPrevious()"
+                [disabled]="!paginationData.hasPrevious">قبلی</button>
+
+            <ng-container *ngFor="let pageId of [].constructor(paginationData.totalPages); let i = index">
+                <button mat-button color="primary" class="margin-left-5" (click)="getDataWithPageId(i+1)"
+                    [disabled]="(i+1)==paginationData.currentPage">{{i+1}}</button>
+            </ng-container>
+
+            <button mat-button color="primary" (click)="getNext()" [disabled]="!paginationData.hasNext">بعدی</button>
+        </div>
+        
+        <div class="col-4 text-left">
+            <mat-form-field>
+                <mat-label>تعداد در هر صفحه</mat-label>
+                <mat-select [(value)]="pageSize" (valueChange)="changePageSize()">
+                    <mat-option *ngFor="let page of pageSizes" [value]="page.id">
+                        {{page.text}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</div>
