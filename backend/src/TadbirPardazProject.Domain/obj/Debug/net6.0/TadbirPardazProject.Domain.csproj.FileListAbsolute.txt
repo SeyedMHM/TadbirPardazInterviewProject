@@ -1,0 +1,15 @@
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Domain\bin\Debug\net6.0\TadbirPardazProject.Domain.deps.json
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Domain\bin\Debug\net6.0\TadbirPardazProject.Domain.dll
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Domain\bin\Debug\net6.0\TadbirPardazProject.Domain.pdb
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Domain\obj\Debug\net6.0\TadbirPardazProject.Domain.csproj.AssemblyReference.cache
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Domain\obj\Debug\net6.0\TadbirPardazProject.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Domain\obj\Debug\net6.0\TadbirPardazProject.Domain.AssemblyInfoInputs.cache
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Domain\obj\Debug\net6.0\TadbirPardazProject.Domain.AssemblyInfo.cs
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Domain\obj\Debug\net6.0\TadbirPardazProject.Domain.csproj.CoreCompileInputs.cache
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Domain\obj\Debug\net6.0\TadbirPardazProject.Domain.dll
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Domain\obj\Debug\net6.0\refint\TadbirPardazProject.Domain.dll
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Domain\obj\Debug\net6.0\TadbirPardazProject.Domain.pdb
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Domain\obj\Debug\net6.0\ref\TadbirPardazProject.Domain.dll
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Domain\obj\Debug\net6.0\TadbirPardazProject.Domain.csproj.CopyComplete
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Domain\bin\Debug\net6.0\TadbirPardazProject.Shared.Common.dll
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Domain\bin\Debug\net6.0\TadbirPardazProject.Shared.Common.pdb

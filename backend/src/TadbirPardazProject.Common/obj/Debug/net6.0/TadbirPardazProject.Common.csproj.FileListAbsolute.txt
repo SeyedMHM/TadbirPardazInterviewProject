@@ -1,0 +1,12 @@
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Common\bin\Debug\net6.0\TadbirPardazProject.Common.deps.json
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Common\bin\Debug\net6.0\TadbirPardazProject.Common.dll
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Common\bin\Debug\net6.0\TadbirPardazProject.Common.pdb
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Common\obj\Debug\net6.0\TadbirPardazProject.Common.csproj.AssemblyReference.cache
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Common\obj\Debug\net6.0\TadbirPardazProject.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Common\obj\Debug\net6.0\TadbirPardazProject.Common.AssemblyInfoInputs.cache
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Common\obj\Debug\net6.0\TadbirPardazProject.Common.AssemblyInfo.cs
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Common\obj\Debug\net6.0\TadbirPardazProject.Common.csproj.CoreCompileInputs.cache
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Common\obj\Debug\net6.0\TadbirPardazProject.Common.dll
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Common\obj\Debug\net6.0\refint\TadbirPardazProject.Common.dll
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Common\obj\Debug\net6.0\TadbirPardazProject.Common.pdb
+C:\Users\a\source\repos\TadbirPardazProject\src\TadbirPardazProject.Common\obj\Debug\net6.0\ref\TadbirPardazProject.Common.dll

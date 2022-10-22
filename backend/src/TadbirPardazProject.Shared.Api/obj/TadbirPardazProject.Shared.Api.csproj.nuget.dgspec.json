@@ -1,0 +1,137 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\a\\source\\repos\\TadbirPardazProject\\src\\TadbirPardazProject.Shared.Api\\TadbirPardazProject.Shared.Api.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\a\\source\\repos\\TadbirPardazProject\\src\\TadbirPardazProject.Shared.Api\\TadbirPardazProject.Shared.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\a\\source\\repos\\TadbirPardazProject\\src\\TadbirPardazProject.Shared.Api\\TadbirPardazProject.Shared.Api.csproj",
+        "projectName": "TadbirPardazProject.Shared.Api",
+        "projectPath": "C:\\Users\\a\\source\\repos\\TadbirPardazProject\\src\\TadbirPardazProject.Shared.Api\\TadbirPardazProject.Shared.Api.csproj",
+        "packagesPath": "C:\\Users\\a\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\a\\source\\repos\\TadbirPardazProject\\src\\TadbirPardazProject.Shared.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\a\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\a\\source\\repos\\TadbirPardazProject\\src\\TadbirPardazProject.Shared.Common\\TadbirPardazProject.Shared.Common.csproj": {
+                "projectPath": "C:\\Users\\a\\source\\repos\\TadbirPardazProject\\src\\TadbirPardazProject.Shared.Common\\TadbirPardazProject.Shared.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.2.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\a\\source\\repos\\TadbirPardazProject\\src\\TadbirPardazProject.Shared.Common\\TadbirPardazProject.Shared.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\a\\source\\repos\\TadbirPardazProject\\src\\TadbirPardazProject.Shared.Common\\TadbirPardazProject.Shared.Common.csproj",
+        "projectName": "TadbirPardazProject.Shared.Common",
+        "projectPath": "C:\\Users\\a\\source\\repos\\TadbirPardazProject\\src\\TadbirPardazProject.Shared.Common\\TadbirPardazProject.Shared.Common.csproj",
+        "packagesPath": "C:\\Users\\a\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\a\\source\\repos\\TadbirPardazProject\\src\\TadbirPardazProject.Shared.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\a\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
